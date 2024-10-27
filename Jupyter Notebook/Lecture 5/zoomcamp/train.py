@@ -83,13 +83,7 @@ model.fit(X_train, train_y)
 
 # predict
 y_pred = model.predict_proba(X_val)[:,1]
-churn_decision = (y_pred >= 0.5)
-
-df_pred = pd.DataFrame()
-df_pred['probability'] = y_pred
-df_pred['prediction'] = churn_decision.astype(int)
-df_pred['actual_val'] = val_y
-df_pred['correct'] = (df_pred.prediction == df_pred.actual_val)
+print(f'Score on Validation Data: {roc_auc_score(val_y, y_pred)}')
 
 def train(data, y, C):
     dicts = data[categorical_variables + numerical_variables].to_dict(orient='records')
