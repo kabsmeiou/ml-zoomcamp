@@ -43,7 +43,7 @@ def predict():
         'churn_probability': prediction,
         'churn': 'Yes' if prediction >= 0.5 else 'No'
     }
-    print(result)
+    # print(result)
     return jsonify(result)
 
 if __name__ == '__main__':
