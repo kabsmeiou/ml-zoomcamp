@@ -1,28 +1,24 @@
 #!/usr/bin/env python
 # coding: utf-8
+
 # model
 from sklearn.linear_model import LogisticRegression
-
+# one hot encoding from sklearn
+from sklearn.feature_extraction import DictVectorizer
 # for calculating the accuracy
 from sklearn.metrics import mean_absolute_error
 from sklearn.metrics import mean_squared_error
 from sklearn.metrics import auc, roc_auc_score
 from sklearn.model_selection import KFold
 from tqdm.auto import tqdm
-
 # for splitting the data
 from sklearn.model_selection import train_test_split
-
 import pandas as pd
 import numpy as np
-
 import matplotlib.pyplot as plt
 import seaborn as sns
-
 import pickle
-# one hot encoding from sklearn
-from sklearn.feature_extraction import DictVectorizer
-
+# ipython
 get_ipython().run_line_magic('matplotlib', 'inline')
 
 print('Reading the data...')
